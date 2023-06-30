@@ -4,6 +4,15 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
+
+}
+.moviePoster{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
 
 }
 #title{
@@ -15,6 +24,16 @@ body{
 }
 sup{
     font-size: 1.5rem;
+}
+#searchBar{
+    font-weight: bold;
+    font-family: 'Tilt Warp', cursive;
+    margin-top: 10rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 100px;
+    width: 80vw;
 }
 @media screen and (max-width: 536px){
     #title{
