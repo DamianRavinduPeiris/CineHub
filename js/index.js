@@ -69,13 +69,20 @@ if (window.innerWidth < 594) {
 }
 if (window.innerWidth < 994) {
     $("#title").css("color", "black");
-    $("body").css("background", "none");
+    let path = "../assets/bg2.svg"
+    $("body").css({
+        "background": `url(${path})`,
+        "background-size": "cover",
+        "background-repeat": "no-repeat",
+        "background-position": "center",
+        "background-attachment": "fixed"
+
+    });
 
 }
 
 $(document).ready(() => {
     $(document).on("click", "#homeButton", () => {
-        let path = "../assets/bg.svg";
         $("#searchBar").val("");
         $(".movieContainer").empty();
 

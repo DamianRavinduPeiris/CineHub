@@ -211,12 +211,8 @@ sup{
     }
     .movieContainer{
         flex-direction: column;
-        align-content: center;
-        width: 300px;
-        height: 300px;
-    }
-    .movieContainer>image{
-        align-self: center;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
     .movieDetails,h1, h2 ,p{
         color: black;
@@ -227,7 +223,6 @@ sup{
         left: 0;
         transform: translateX(0);
     }
-    #homeButton{
-    }
+
 
 }
