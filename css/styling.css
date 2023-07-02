@@ -4,23 +4,37 @@ body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow: hidden;
+
 
 }
 .moviePoster{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
-    height: 500px;
+    display: flex;
+    margin-left: 5rem;
+    width: auto;
+    height: auto;
+}
+.movieDetails{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    width: auto;
+    height: auto;
 
+}
+.movieDetails>h1, h2 ,p{
+    text-align: center;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-top: 3rem;
+    margin-left: 5rem;
 }
 #title{
     color: white;
     text-align: center;
     font-family: 'Tilt Warp', cursive;
     font-size: 8rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 sup{
     font-size: 1.5rem;
@@ -38,6 +52,15 @@ sup{
 @media screen and (max-width: 536px){
     #title{
         font-size: 5rem;
+    }
+
+}
+@media screen and (max-width: 800px) {
+    .moviePoster{
+        flex-direction: column;
+        align-content: center;
+        width: 300px;
+        height: 300px;
     }
 
 }
