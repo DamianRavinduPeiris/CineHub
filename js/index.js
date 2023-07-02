@@ -43,19 +43,19 @@ async function fetchMovie(movieName) {
             $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[1].url + "><button data-aos='zoom-in' class='btn btn-dark downloadButtons animate__animated animate__rubberBand' type='button'>" + "1080p : " + movieData.data.movies[0].torrents[1].size + "</button>")
 
         } else {
-            showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "We do not have 1080p torrents!😩", "error")
+            showAlert("😩", "We do not have 1080p torrents!", "error")
 
         }
         if (movieData.data.movies[0].torrents[2]) {
             $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[2].url + "><button data-aos='zoom-in' class='btn btn-dark downloadButtons animate__animated animate__rubberBand' type='button'>" + "2160p : " + movieData.data.movies[0].torrents[2].size + "</button>")
         } else {
-            showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "We do not have 2160p torrents!😩", "error")
+            showAlert("😩", "We do not have 2160p torrents!", "error")
         }
         /*Appending the home button after fetching movies.*/
         $(".movieDetails").append("<a href=''><button id=homeButton class='btn btn-dark downloadButtons  animate__animated animate__rubberBand' type='button'>" + "Back to home!" + "</button>")
 
     } catch (e) {
-        showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "Movie not found!😩", "error")
+        showAlert("😩", "Movie not found!", "error")
         $("#searchBar").val("");
         $("#searchBar").css("display", "block");
     }
