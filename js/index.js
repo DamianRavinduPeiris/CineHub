@@ -1,3 +1,4 @@
+
 $("#searchBar").on("keydown", (event) => {
     if (event.key === "Enter") {
         fetchMovie($("#searchBar").val())
