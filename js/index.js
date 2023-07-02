@@ -23,12 +23,29 @@ async function fetchMovie(movieName) {
 
 
         $(".moviePoster").append("<img src='" + movieData.data.movies[0].large_cover_image + "' class='animate__animated animate__rubberBand'>")
-        $(".moviePoster").append("<div class='movieDetails'>"+"<h1 class='animate__animated animate__zoomInDown'>"+movieData.data.movies[0].title + "." +"</h1>"+"</div>")
-        $(".movieDetails").append("<h2 class='animate__animated animate__zoomInDown'>"+"Released : "+movieData.data.movies[0].year + "." +"</h2>")
+        $(".moviePoster").append("<div class='movieDetails'>" + "<h1 class='animate__animated animate__zoomInDown'>" + movieData.data.movies[0].title + "." + "</h1>" + "</div>")
+        $(".movieDetails").append("<h2 class='animate__animated animate__zoomInDown'>" + "Released : " + movieData.data.movies[0].year + "." + "</h2>")
+        $(".movieDetails").append("<h2 class='animate__animated animate__zoomInDown'>" + "Language  : " + movieData.data.movies[0].language + "." + "</h2>")
+        $(".movieDetails").append("<h2 class='animate__animated animate__zoomInDown'>" + "Genres  : " + movieData.data.movies[0].genres + "." + "</h2>")
+        $(".movieDetails").append("<h2 class='animate__animated animate__zoomInDown'>" + "Runtime  : " + movieData.data.movies[0].runtime + "mins." + "</h2>")
+        $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[0].url + "><button class='btn btn-dark' type='button'>" + "720p" + "</button>")
+        /*Some movies do not have above 720p.*/
+        if (movieData.data.movies[0].torrents[1]) {
+            $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[1].url + "><button class='btn btn-dark' type='button'>" + "1080p" + "</button>")
+
+        }
+        else {
+            swal(":(", "We do not have 1080p!", "error")
+
+        }
+        if (movieData.data.movies[0].torrents[2]) {
+            $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[2].url + "><button class='btn btn-dark' type='button'>" + "2160p" + "</button>")
+        }else{
+            swal(":(", "We do not have 2160p!", "error")
+        }
 
 
-
-
+        /*In smaller screens the movie poster must be aligned to the center.*/
         if (window.innerWidth < 606) {
             $(".moviePoster").css("align-self", "center");
 

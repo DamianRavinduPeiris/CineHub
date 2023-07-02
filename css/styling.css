@@ -62,5 +62,10 @@ sup{
         width: 300px;
         height: 300px;
     }
+    .movieDetails,h1, h2 ,p{
+        color: black;
+        margin-left: 0;
+        text-align: center;
+    }
 
 }
