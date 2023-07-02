@@ -97,7 +97,9 @@ $(document).ready(() => {
 
     });
 });
-
+$("#title").on("click",()=>{
+   window.location.reload();
+});
 
     function showAlert(title, msg, icon) {
             new swal({
