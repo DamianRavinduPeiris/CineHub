@@ -199,9 +199,9 @@ sup{
 }
 /*Footer - End.*/
 
-@media screen and (max-width: 536px){
+@media screen and (max-width: 840px){
     #title{
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
 }
