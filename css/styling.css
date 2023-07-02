@@ -203,6 +203,9 @@ sup{
     #title{
         font-size: 3rem;
     }
+    .footerText{
+        font-size: 1rem;
+    }
 
 }
 @media screen and (max-width: 800px) {
