@@ -7,11 +7,17 @@ body{
 
 
 }
-.moviePoster{
+.movieContainer{
     display: flex;
     margin-left: 5rem;
     width: auto;
     height: auto;
+}
+.movieContainer>image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 3rem;
 }
 .movieDetails{
     display: flex;
@@ -24,10 +30,29 @@ body{
 .movieDetails>h1, h2 ,p{
     text-align: center;
     font-family: 'Tilt Warp', cursive;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     margin-top: 3rem;
     margin-left: 5rem;
+}
+.downloadButtons{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    background-color: rgba(92, 198, 93, 0.8);
+    font-family: 'Tilt Warp', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.downloadButtons:hover{
+    background-color:black;
+    color: white;
 }
 #title{
     color: white;
@@ -56,16 +81,25 @@ sup{
 
 }
 @media screen and (max-width: 800px) {
-    .moviePoster{
+    .movieContainer{
         flex-direction: column;
         align-content: center;
         width: 300px;
         height: 300px;
     }
+    .movieContainer>image{
+        align-self: center;
+    }
     .movieDetails,h1, h2 ,p{
         color: black;
         margin-left: 0;
         text-align: center;
+    }
+    .downloadButtons{
+        left: 0;
+        transform: translateX(0);
+    }
+    #homeButton{
     }
 
 }
