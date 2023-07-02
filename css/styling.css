@@ -80,6 +80,9 @@ sup{
     border: 100px;
     width: 80vw;
 }
+#title:hover{
+ cursor: pointer;
+}
 /*Footer - Start.*/
 
 .myFooter{
