@@ -17,7 +17,9 @@ async function fetchMovie(movieName) {
             "background": `url(${movieBackground})`,
             "background-size": "cover",
             "background-repeat": "no-repeat",
-            "background-position": "center"
+            "background-position": "center",
+            "background-attachment": "fixed"
+
         });
 
 
@@ -31,24 +33,28 @@ async function fetchMovie(movieName) {
         $(".movieDetails").append("<h2 data-aos='zoom-in' class='animate__animated animate__zoomInDown'>" + "Runtime  : " + movieData.data.movies[0].runtime + " mins." + "</h2>")
         $(".movieDetails").append("<p data-aos='zoom-in' class='animate__animated animate__zoomInDown'>" + "Summary  : " + movieData.data.movies[0].summary + "." + "</p>")
         $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[0].url + "><button data-aos='zoom-in' class='btn btn-dark downloadButtons animate__animated animate__rubberBand' type='button'>" + "720p : " + movieData.data.movies[0].torrents[0].size + "</button>")
+        if(window.innerWidth < 800){
+            $(".myFooter").css("display", "none");
+
+        }
         /*Some movies do not have above 720p.*/
         if (movieData.data.movies[0].torrents[1]) {
             $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[1].url + "><button data-aos='zoom-in' class='btn btn-dark downloadButtons animate__animated animate__rubberBand' type='button'>" + "1080p : " + movieData.data.movies[0].torrents[1].size + "</button>")
 
         } else {
-            swal(":(", "We do not have 1080p!", "error")
+            showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "We do not have 1080p torrents!😩", "error")
 
         }
         if (movieData.data.movies[0].torrents[2]) {
             $(".movieDetails").append("<a href=" + movieData.data.movies[0].torrents[2].url + "><button data-aos='zoom-in' class='btn btn-dark downloadButtons animate__animated animate__rubberBand' type='button'>" + "2160p : " + movieData.data.movies[0].torrents[2].size + "</button>")
         } else {
-            swal(":(", "We do not have 2160p!", "error")
+            showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "We do not have 2160p torrents!😩", "error")
         }
-            /*Appending the home button after fetching movies.*/
+        /*Appending the home button after fetching movies.*/
         $(".movieDetails").append("<a href=''><button id=homeButton class='btn btn-dark downloadButtons  animate__animated animate__rubberBand' type='button'>" + "Back to home!" + "</button>")
 
     } catch (e) {
-        swal(" :( ", "Movie not found , enter movie name + year for more accurate results!", "error")
+        showAlert("<img src='https://media.giphy.com/media/d7rvF20PqNuGKSQGhf/giphy.gif'>", "Movie not found!😩", "error")
         $("#searchBar").val("");
         $("#searchBar").css("display", "block");
     }
@@ -83,6 +89,18 @@ $(document).ready(() => {
 
     });
 });
+
+
+    function showAlert(title, msg, icon) {
+            new swal({
+                title: title,
+                text: msg,
+                icon: icon,
+
+            });
+
+
+    }
 
 
 
