@@ -1,5 +1,5 @@
 # <u>🍿 `Cinehub.`<u>
-### A simple web app which let's you download `movie torrents` in `720p` , `1080p` , `2160p 4K`.
+A simple web app which let's you download `movie torrents` in `720p` , `1080p` , `2160p 4K`.
 
 
 
@@ -11,4 +11,4 @@
 
 
 
-  ### 🚀 Now live at 👉  <a href="https://cinehub-by-damian.pages.dev" target=_blank>`https://cinehub-by-damian.pages.dev/`</a>
+
